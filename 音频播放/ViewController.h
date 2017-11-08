@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import <AVFoundation/AVFoundation.h>
+@interface ViewController : UIViewController<AVAudioPlayerDelegate>
+{
+    UIButton *_btnPlay;
+    UIButton  *_btnPause;
+    UIButton *_btnStop;
+    
+    //播放进度
+    UIProgressView *_musicProgress;
+    //声音大小滑动条
+    UISlider *_volumeSlider;
+    //静音开关
+    UISwitch *_volumeOn;
+    //音频播放器对象
+    AVAudioPlayer *_player;
+    
+    NSTimer *_timer;
+}
 
 @end
 
